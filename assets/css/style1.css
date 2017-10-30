@@ -1,0 +1,69 @@
+.navbar {
+    overflow: hidden;
+    background-color: #FFFFFF;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+    border-radius: 0px;
+}
+
+.navbar img {
+    width: 200px;
+}
+
+.parallax1 {
+    background-image: url("../images/Drinking.jpg");
+    min-height: 550px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.caption span.border {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #000010;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    align-content: center;
+}
+
+.caption {
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.text1 {
+    font-family: 'Titillium Web', sans-serif;
+    color: #777;
+    background-color: white;
+    text-align: center;
+    padding: 15px 100px;
+    text-align: justify;
+}
+
+.text2 {
+    font-family: 'Titillium Web', sans-serif;
+    color: #FFFFFF;
+    background-color: #fbb03b;
+    text-align: center;
+    padding: 50px 80px;
+    text-align: justify;
+}
+
+.footer {
+    background-color: #fbb03b;
+    text-align: center;
+    padding: 10px;
+    color: #FFFFFF;
+}
