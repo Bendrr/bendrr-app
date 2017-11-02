@@ -15,20 +15,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     sex: {
-      // I want to add a ref to a foriegn key here.  How do we validate the date from the form agains the table contents?
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
-    },
-    interested_in: {
-       // I want to add a ref to a foriegn key as above, same ?
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }  
     },
     age: {
       type: DataTypes.TINYINT,
@@ -40,12 +31,6 @@ module.exports = function(sequelize, DataTypes) {
     tag_line: {
       type: DataTypes.STRING,
       allowNull: true
-    },
-    status: {
-      // I want to add a ref to a foriegn key as above, same ?
-      type: DataTypes.STRING,
-      defaultValue: "Ready to Party",
-      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -59,24 +44,27 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     profile_pic: {
-      // I want to add a ref to a foriegn key as above, same ?
       type: DataTypes.STRING,
       allowNull: true
-    }
-
+    },
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   });
 
   User.associate = function(models) {
     User.hasOne(models.accounts, {
-      foreignKey: {
-        allowNull: false
-      },
       onDelete: "cascade"
     });
   };
 
-    User.associate = function(models) {
+  User.associate = function(models) {
     User.hasMany(models.pics, {
+      onDelete: "cascade"
+    });
+  };
+
+  User.associate = function(models) {
+    User.hasMany(models.bends, {
       onDelete: "cascade"
     });
   };

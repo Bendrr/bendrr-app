@@ -13,11 +13,16 @@ module.exports = function(sequelize, DataTypes) {
       	validate: {
         len: [6]
         }
-    }
+    },
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
 	});
 
   Account.associate = function(models) {
-    Account.hasOne(models.users, {
+    Account.belongsTo(models.users, {
+      foreignKey: {
+        allowNull: false
+      },
       onDelete: "cascade"
     });
   };
