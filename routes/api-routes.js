@@ -56,9 +56,9 @@ module.exports = function(app) {
   });
 
     app.get("/bends/:id", function(req, res) {
-    db.users.findOne({
+    db.bends.findOne({
       where: {
-        id: req.params.id,
+        userId: req.params.id,
         current_bend: true
       }
     })

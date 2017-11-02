@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
   	createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
     current_bend: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false
     }
