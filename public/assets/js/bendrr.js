@@ -1,4 +1,3 @@
-
 $("#login").on("click", function(event) {
 
    event.preventDefault();
@@ -17,18 +16,10 @@ $("#login").on("click", function(event) {
       function(result) {
         if (result !== "") {
           window.location = "/content/" + result.id;
-          // renderContent(result);
         }
       }
     );
 });
-
-var renderContent = function(content) {
-  console.log("Content from renderContent Function");
-  console.log(content);
-  $.render("/content", content);
-};
-
 
 
 $("#createUser").on("click", function(event) {
@@ -64,27 +55,12 @@ $("#createUser").on("click", function(event) {
 
     console.log(newUser);
 
-    // Send the POST request.
     $.ajax("/user", {
       type: "POST",
       data: newUser
     }).then(
       function(result) {
-        // console.log("result:")
-        // console.log(result.id);
-      //   $.ajax("/content", {
-      //   type: "POST",
-      //   data: result
-      // });
       window.location = "/content/" + result.id;
-       
-        // console.log("added new user");
-        // // renderContent(result);
-        // console.log(result);
-        // app.get("/content", result);
-        // Reload the page to get the updated list
-        // location.reload();
-
       }
     );
   });

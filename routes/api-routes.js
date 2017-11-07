@@ -1,5 +1,5 @@
 var db = require("../models");
-var path      = require('path');
+var path = require('path');
 
 module.exports = function(app) {
 
@@ -82,13 +82,6 @@ module.exports = function(app) {
 
   app.post("/user", function(req, res) {
     db.users.create(req.body).then(function(dbPost) {
-      // res.redirect("/content");
-      //call the app.put("/account") to update the userId field.
-      // console.log("app.post results");
-      // console.log("dbPost below");
-      // console.log(dbPost);
-      // res.sendFile(path.join(__dirname, "../views/content.handlebars"), dbPost);
-      // return res.render("content", dbPost);
       res.json(dbPost);
     });
   });

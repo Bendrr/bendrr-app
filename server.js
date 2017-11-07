@@ -15,13 +15,10 @@ app.use(express.static("public"));
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
-// exphbs.registerPartial('profile', '{{profile}}');
-// exphbs.registerPartial('feed', '{{feed}}');
 
-// exphbs.registerHelper();
+
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-// require("./routes/post-api-routes.js")(app);
 // { force: true }
 
 db.sequelize.sync().then(function() {

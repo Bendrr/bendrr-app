@@ -7,13 +7,6 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  // app.get("/content", function(req, res) {
-  //   console.log(req);
-  //   var data = req.data;
-  //   console.log(data);
-  //   res.render("content", data);
-  // });
-
   app.get("/content/:id", function(req, res) {
     db.users.findOne({
       where: {
@@ -27,13 +20,6 @@ module.exports = function(app) {
     .then(function(dbPost) {
       res.render("feed", dbPost);
     });
-
-
-
-    // console.log(req);
-    // var data = req.data;
-    // console.log(data);
-    // res.render("content", data);
   });
 
 };
