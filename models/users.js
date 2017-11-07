@@ -16,52 +16,53 @@ module.exports = function(sequelize, DataTypes) {
     },
     sex: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: true
     },
     age: {
       type: DataTypes.TINYINT,
-      allowNull: false,
-      validate: {
-        len: [2]
-      }
+      allowNull: true
     },
     tag_line: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
     sms_phone: {
       type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [10]
-      }
+      allowNull: true
     },
     profile_pic: {
       type: DataTypes.STRING,
       allowNull: true
     },
+    user_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+        }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+        validate: {
+        len: [6]
+        }
+    },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE
   });
 
-  User.associate = function(models) {
-    User.hasOne(models.accounts, {
-      onDelete: "cascade"
-    });
-  };
+  // User.associate = function(models) {
+  //   User.hasOne(models.accounts, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
-  User.associate = function(models) {
-    User.hasMany(models.pics, {
-      onDelete: "cascade"
-    });
-  };
+  // User.associate = function(models) {
+  //   User.hasMany(models.pics, {
+  //     onDelete: "cascade"
+  //   });
+  // };
 
   User.associate = function(models) {
     User.hasMany(models.bends, {

@@ -6,6 +6,5 @@ select * from spend_statuses;
 select * from status_statuses;
 select * from safety_statuses;
 select * from bends;
-select * from accounts;
 
 /*sequelize db:seed:all
